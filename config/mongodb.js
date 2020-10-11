@@ -10,9 +10,11 @@ const connectDb = async () => {
       useFindAndModify: false
     });
   } catch (error) {
-    console.log('================ERROR=============', error.message);
+    console.log(error.message);
     process.exit(1);
   }
 };
 
 module.exports = connectDb;
+
+
