@@ -12,9 +12,11 @@ connectDb();
 
 const playerRouter = require('./routes/player');
 const monsterRouter = require('./routes/monster');
+const indexRouter = require('./routes/index');
 
 app.use('/players', playerRouter);
 app.use('/monsters', monsterRouter);
+app.use('/', indexRouter);
 
 
 app.listen(PORT, function() {
