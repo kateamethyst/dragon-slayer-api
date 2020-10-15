@@ -1,6 +1,12 @@
 'use strict';
 const Player = require('../models/Player');
 
+/**
+ * Get All the Players Information sort by created at
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
 exports.all = async (req, res, next) => {
     try {
         const players = await Player.find().sort({ created_at: -1 });
@@ -11,7 +17,12 @@ exports.all = async (req, res, next) => {
     }
 }
 
-
+/**
+ * Save Player
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
 exports.store = async (req, res, next) => {
     try {
         const player =  new Player({
